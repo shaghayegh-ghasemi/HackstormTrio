@@ -6,6 +6,13 @@ import time
 from utils.drive_utils import transcript
 from utils.summarization import summarize_text
 
+# Set Page Configuration
+st.set_page_config(
+    page_title="Hackstorm Trio - Video Summarizer",
+    page_icon="⚡",
+    layout="wide"
+)
+
 # Flask Backend
 app = Flask(__name__)
 
@@ -36,18 +43,13 @@ def run_flask():
 
 threading.Thread(target=run_flask, daemon=True).start()
 
-# page title
-st.set_page_config(page_title="Hackstorm Trio", page_icon="⚡")
-
-# Streamlit UI
+# Streamlit UI - Hackstorm Trio Branding
 st.title("🎥 Video Summarizer")
-
-st.write("🚀 Welcome to **Hackstorm Trio**'s AI-powered Video Summarization Tool!")
-
-st.write("Enter a Google Drive video link to generate a summary.")
+st.markdown("<h4 style='text-align: center;'>🚀 Welcome to Hackstorm Trio's AI-powered Video Summarization Tool!</h4>", unsafe_allow_html=True)
+st.write("Enter a **Google Drive video link** below, and our AI will generate a concise summary for you.")
 
 # User Input
-drive_link = st.text_input("🔗 Google Drive Video Link")
+drive_link = st.text_input("🔗 **Google Drive Video Link**")
 
 if st.button("🚀 Generate Summary"):
     if drive_link:
@@ -81,3 +83,40 @@ if st.button("🚀 Generate Summary"):
                 st.error("Error: " + response.json().get("error", "Unknown error."))
     else:
         st.warning("⚠️ Please enter a valid video link.")
+
+# --- 📌 Contributors Section ---
+st.markdown("---")
+st.markdown("<h2 style='text-align: center;'>👨‍💻 Hackstorm Trio Contributors 🚀</h2>", unsafe_allow_html=True)
+
+# Contributor details (Replace with actual image URLs and GitHub links)
+contributors = [
+    {
+        "name": "Shaghayegh Ghasemi",
+        "image": "https://avatars.githubusercontent.com/u/1?v=4",  # Replace with actual image
+        "github": "https://github.com/shaghayegh-ghasemi"
+    },
+    {
+        "name": "Milad Khanchi",
+        "image": "https://avatars.githubusercontent.com/u/2?v=4",  # Replace with actual image
+        "github": "https://github.com/Milad-Khanchi"
+    },
+    {
+        "name": "Qian Sun",
+        "image": "https://avatars.githubusercontent.com/u/3?v=4",  # Replace with actual image
+        "github": "https://github.com/chin-sun"
+    }
+]
+
+# Centered Layout for Contributors
+cols = st.columns(3)
+
+for i, contributor in enumerate(contributors):
+    with cols[i]:
+        st.image(contributor["image"], width=150, use_column_width=False)
+        st.markdown(f"### [{contributor['name']}]({contributor['github']})")
+        st.markdown("[🔗 GitHub Profile](" + contributor["github"] + ")")
+
+# Footer Branding
+st.markdown("---")
+st.markdown("🔹 **Hackstorm Trio** - AI-Powered Innovation 🚀")
+st.markdown("💡 Developed with ❤️ by Hackstorm Trio")
