@@ -127,7 +127,7 @@ with content:  # Content will take 3/5 of the page width
         },
         {
             "name": "Qian Sun",
-            "image": "https://raw.githubusercontent.com/shaghayegh-ghasemi/HackstormTrio/refs/heads/shaghayegh/assets/contributors/qian.jpg?token=GHSAT0AAAAAAC5C7XVJNGR3VD65SMCMZNGSZ46RTYQ",
+            "image": "https://raw.githubusercontent.com/shaghayegh-ghasemi/HackstormTrio/refs/heads/shaghayegh/assets/contributors/qian.jpg?token=GHSAT0AAAAAAC5C7XVJ4OKFC7WASPZFOESIZ46RWKQ",
             "github": "https://github.com/chin-sun"
         }
     ]
