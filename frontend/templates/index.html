@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Report</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/uikit/3.3.3/css/uikit.min.css" crossorigin="anonymous"/>
+    <!-- UIkit JS -->
+    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/uikit/3.3.3/js/uikit.min.js"></script>
+    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/uikit/3.3.3/js/uikit-icons.min.js"></script>
+    <!-- Day.js -->
+    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/dayjs/1.10.8/dayjs.min.js"></script>
+    <!-- QR Code JS -->
+    <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/alpinejs/3.9.0/cdn.min.js"></script>
+</head>
+<body>
+    <div class="uk-container uk-margin-large-top">
+        <h1 class="uk-heading-line uk-text-center"><span>Tax Report</span></h1>
+
+        <!-- File Upload Form -->
+        <form id="uploadForm" class="uk-form-stacked uk-margin">
+            <div class="uk-margin">
+                <label class="uk-form-label" for="fileInput">Upload Transactions (CSV):</label>
+                <div class="uk-form-controls">
+                    <input type="file" id="fileInput" name="file" accept=".csv" required class="uk-input">
+                </div>
+            </div>
+            <button type="submit" class="uk-button uk-button-primary">Submit</button>
+        </form>
+
+        <hr class="uk-divider-icon">
+
+        <!-- Report Section -->
+        <div id="reportSection" class="uk-card uk-card-default uk-card-body uk-margin" style="display: none;">
+            <h2 class="uk-card-title">Calculated Tax</h2>
+            <pre id="reportContent" class="uk-overflow-auto"></pre>
+            <button id="downloadBtn" class="uk-button uk-button-secondary">Download Report</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const uploadForm = document.getElementById("uploadForm");
+            const reportSection = document.getElementById("reportSection");
+            const reportContent = document.getElementById("reportContent");
+            const downloadBtn = document.getElementById("downloadBtn");
+
+            uploadForm.addEventListener("submit", async (e) => {
+                e.preventDefault();
+
+                const fileInput = document.getElementById("fileInput");
+                const formData = new FormData();
+                formData.append("file", fileInput.files[0]);
+
+                const file = fileInput.files[0];
+
+                // 检查文件类型
+                if (!file || file.type !== "text/csv") {
+                    UIkit.notification({ message: "Only CSV files are accepted.", status: "danger" });
+                    return; // 停止进一步执行
+                }
+                try {
+                    // POST transactions
+                    const response = await fetch("/transactions", {
+                        method: "POST",
+                        body: formData,
+                    });
+
+                    if (!response.ok) throw new Error("Failed to upload transactions");
+
+                    UIkit.notification({ message: "Transactions uploaded successfully!", status: "success" });
+
+                    // GET report
+                    const reportResponse = await fetch("/report");
+                    if (!reportResponse.ok) throw new Error("Failed to fetch report");
+
+                    const report = await reportResponse.json();
+
+                    // Display report
+                    reportSection.style.display = "block";
+                    reportContent.textContent = JSON.stringify(report, null, 2);
+
+                    // Prepare download
+                    downloadBtn.onclick = () => {
+                        const blob = new Blob([JSON.stringify(report, null, 2)], { type: "application/json" });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement("a");
+                        a.href = url;
+                        a.download = "report.json";
+                        a.click();
+                        URL.revokeObjectURL(url);
+                    };
+                } catch (error) {
+                    UIkit.notification({ message: error.message, status: "danger" });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
