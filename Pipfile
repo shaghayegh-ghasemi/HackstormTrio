@@ -14,6 +14,8 @@ moviepy = "*"
 langchain-ollama = "*"
 flask = "*"
 streamlit = "*"
+flask-cors = "*"
+waitress = "*"
 
 [dev-packages]
 

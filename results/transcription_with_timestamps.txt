@@ -1,0 +1,12 @@
+At 00:00:00:  Hi, I am Midot, I am a Master of Sciences student at Concordia University.
+At 00:00:05:  I am a graduate researcher and I am AI researcher in the field of computer vision.
+At 00:00:14:  My thesis is about multi-object tracking. I am trying to integrate zero shot depth prediction into the tracking.
+At 00:00:25:  I have done thousands of projects like fine tuning LLMs using a hogging phase.
+At 00:00:33:  For medical purpose also I have predicted, actually I have trained a birth model to sentiment analysis.
+At 00:00:47:  Also I have used deep Q learning for lunar landing.
+At 00:00:53:  Also I have done a project in a video games. For a Pac-Man I have used deep convolutional Q learning to actually get the good score in the Pac-Man game.
+At 00:01:10:  The reason that I am in Montreal is that Montreal is the hub of AI and I am so passionate about solving real world problems with AI techniques.
+At 00:01:27:  I really like to work in startups because I think that you will grow faster in startup environment.
+At 00:01:37:  I am so passionate about doing research. Recently I have submitted a paper in CVPR 2025. Now it is under the review.
+At 00:01:47:  I think that I am a good fit for this role and I have a background in using AWS Azure for running AI models.
+At 00:02:02:  And that's it.
