@@ -20,21 +20,20 @@ def extract_audio(video_path, audio_path="audio.wav"):
 
 def transcribe_audio(audio_path):
     """Convert audio to text using Whisper AI."""
-    model = whisper.load_model("tiny")  # base _ Change to "tiny" for faster but less accurate transcription
+    model = whisper.load_model("base")  # base _ Change to "tiny" for faster but less accurate transcription
     result = model.transcribe(audio_path)
     return result["text"]
 
-# 🔹 Provide Google Drive link
-drive_link = "https://drive.google.com/file/d/1x2HlTWOH2_rJJWeEU7xl5na-mtfCqKV2/view?usp=drive_link"
-
 # 🔹 Get transcript
-video_path = download_video(drive_link)
-audio_path = extract_audio(video_path)
-transcript = transcribe_audio(audio_path)
-
-# 🔹 Print transcript
-print("\n🔹 Transcript:\n", transcript)
+def transcript(drive_link):
+    video_path = download_video(drive_link)
+    audio_path = extract_audio(video_path)
+    transcript = transcribe_audio(audio_path)
+    return transcript
 
 # 🔹 Save transcript
-with open("transcript.txt", "w") as f:
-    f.write(transcript)
+def save_transcript(transcript):
+    with open("transcript.txt", "w") as f:
+        f.write(transcript)
+# 🔹 Print transcript
+# print("\n🔹 Transcript:\n", transcript)
