@@ -1,0 +1,153 @@
+[
+    {
+      "itinerary_name": "Montreal_5D4N_basic",
+      "day": 1,
+      "time": "2:00 PM",
+      "location": "Hotel Chrome Montreal",
+      "activity": "Check-in",
+      "activity_desc": "Arrive at Hotel Chrome Montreal and check into your room.",
+      "cuisine": "",
+      "avg_cost_per_person": 0
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_basic",
+      "day": 1,
+      "time": "4:00 PM",
+      "location": "Old Montreal (Vieux-Montréal)",
+      "activity": "Sightseeing",
+      "activity_desc": "Explore Old Montreal, walk around the historic district, and visit iconic spots like Place d’Armes and Notre-Dame Basilica.",
+      "cuisine": "",
+      "avg_cost_per_person": 10
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_basic",
+      "day": 1,
+      "time": "7:00 PM",
+      "location": "Garde Manger",
+      "activity": "Dinner",
+      "activity_desc": "Enjoy a casual yet refined dinner at Garde Manger, a popular Montreal restaurant.",
+      "cuisine": "",
+      "avg_cost_per_person": 40
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_basic",
+      "day": 2,
+      "time": "9:00 AM",
+      "location": "Mont Royal Park",
+      "activity": "Morning Hike",
+      "activity_desc": "Hike up Mont Royal and enjoy panoramic views of the city from the Kondiaronk Belvedere.",
+      "cuisine": "",
+      "avg_cost_per_person": 0
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_basic",
+      "day": 2,
+      "time": "12:00 PM",
+      "location": "La Banquise",
+      "activity": "Lunch",
+      "activity_desc": "Grab a famous poutine from La Banquise, an affordable and iconic spot in Montreal.",
+      "cuisine": "",
+      "avg_cost_per_person": 15
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_basic",
+      "day": 2,
+      "time": "2:00 PM",
+      "location": "Montreal Museum of Fine Arts",
+      "activity": "Cultural Visit",
+      "activity_desc": "Visit the Montreal Museum of Fine Arts to admire a vast collection of art.",
+      "cuisine": "",
+      "avg_cost_per_person": 25
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_basic",
+      "day": 2,
+      "time": "6:30 PM",
+      "location": "Schwartz's Deli",
+      "activity": "Dinner",
+      "activity_desc": "Have dinner at Schwartz's Deli and try their famous smoked meat sandwich.",
+      "cuisine": "",
+      "avg_cost_per_person": 20
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_basic",
+      "day": 3,
+      "time": "9:30 AM",
+      "location": "Jean-Talon Market",
+      "activity": "Market Exploration",
+      "activity_desc": "Stroll through Jean-Talon Market, sample fresh produce, and try local delicacies.",
+      "cuisine": "",
+      "avg_cost_per_person": 10
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_basic",
+      "day": 3,
+      "time": "1:00 PM",
+      "location": "Saint Joseph's Oratory",
+      "activity": "Visit",
+      "activity_desc": "Visit Saint Joseph's Oratory, a beautiful basilica perched atop Mount Royal.",
+      "cuisine": "",
+      "avg_cost_per_person": 5
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_basic",
+      "day": 3,
+      "time": "6:00 PM",
+      "location": "Atwater Market",
+      "activity": "Dinner",
+      "activity_desc": "Enjoy a riverside dinner at one of the local restaurants near Atwater Market.",
+      "cuisine": "",
+      "avg_cost_per_person": 30
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_basic",
+      "day": 4,
+      "time": "10:00 AM",
+      "location": "Biodome de Montreal",
+      "activity": "Nature Experience",
+      "activity_desc": "Visit the Biodome and explore various ecosystems, including the rainforest and polar regions.",
+      "cuisine": "",
+      "avg_cost_per_person": 23
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_basic",
+      "day": 4,
+      "time": "1:00 PM",
+      "location": "L'Express",
+      "activity": "Lunch",
+      "activity_desc": "Have lunch at L'Express, a classic French bistro with affordable options.",
+      "cuisine": "",
+      "avg_cost_per_person": 25
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_basic",
+      "day": 4,
+      "time": "4:00 PM",
+      "location": "Old Port of Montreal",
+      "activity": "Evening Walk",
+      "activity_desc": "Take an evening walk along the Old Port of Montreal, enjoy street performances, and watch the sunset over the water.",
+      "cuisine": "",
+      "avg_cost_per_person": 0
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_basic",
+      "day": 4,
+      "time": "7:00 PM",
+      "location": "Le Robin Square",
+      "activity": "Dinner",
+      "activity_desc": "End the day with a delicious farm-to-table dinner at Le Robin Square.",
+      "cuisine": "",
+      "avg_cost_per_person": 35
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_basic",
+      "day": 5,
+      "time": "9:00 AM",
+      "location": "Hotel Chrome Montreal",
+      "activity": "Check-out",
+      "activity_desc": "Check out of Hotel Chrome Montreal and prepare for departure.",
+      "cuisine": "",
+      "avg_cost_per_person": 0
+    }
+]
+  

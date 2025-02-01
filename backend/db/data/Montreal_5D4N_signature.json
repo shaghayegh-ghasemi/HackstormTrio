@@ -1,0 +1,163 @@
+[
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 1,
+      "time": "2:00 PM",
+      "location": "Hotel Bonaventure Montreal",
+      "activity": "Check-in",
+      "activity_desc": "Arrive at Hotel Bonaventure Montreal and check into your room.",
+      "cuisine": "",
+      "avg_cost_per_person": 0
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 1,
+      "time": "4:30 PM",
+      "location": "Old Montreal",
+      "activity": "Evening Exploration",
+      "activity_desc": "Wander through Old Montreal, visit the Notre-Dame Basilica, and enjoy the historical architecture.",
+      "cuisine": "",
+      "avg_cost_per_person": 15
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 1,
+      "time": "7:00 PM",
+      "location": "Modavie",
+      "activity": "Dinner",
+      "activity_desc": "Dine at Modavie, a French bistro known for live jazz music and a mid-range menu.",
+      "cuisine": "",
+      "avg_cost_per_person": 45
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 2,
+      "time": "9:00 AM",
+      "location": "Mont Royal Park",
+      "activity": "Morning Hike",
+      "activity_desc": "Enjoy a relaxing morning hike at Mont Royal Park, followed by a visit to the lookout for a panoramic view of Montreal.",
+      "cuisine": "",
+      "avg_cost_per_person": 0
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 2,
+      "time": "12:00 PM",
+      "location": "Olive & Gourmando",
+      "activity": "Lunch",
+      "activity_desc": "Have a laid-back lunch at Olive & Gourmando, known for its gourmet sandwiches and pastries.",
+      "cuisine": "",
+      "avg_cost_per_person": 20
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 2,
+      "time": "2:30 PM",
+      "location": "Montreal Museum of Fine Arts",
+      "activity": "Museum Visit",
+      "activity_desc": "Explore the Montreal Museum of Fine Arts, one of the most prominent art museums in Canada.",
+      "cuisine": "",
+      "avg_cost_per_person": 25
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 2,
+      "time": "7:00 PM",
+      "location": "Au Pied de Cochon",
+      "activity": "Dinner",
+      "activity_desc": "Indulge in dinner at Au Pied de Cochon, a renowned Montreal restaurant known for its rich Québécois cuisine.",
+      "cuisine": "",
+      "avg_cost_per_person": 60
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 3,
+      "time": "9:30 AM",
+      "location": "Jean-Talon Market",
+      "activity": "Market Visit",
+      "activity_desc": "Visit Jean-Talon Market for fresh local produce, food stalls, and an authentic Montreal market experience.",
+      "cuisine": "",
+      "avg_cost_per_person": 15
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 3,
+      "time": "1:00 PM",
+      "location": "Atwater Market",
+      "activity": "Lunch and Market Stroll",
+      "activity_desc": "Enjoy a light lunch at one of the stalls in Atwater Market, famous for its gourmet products and local specialties.",
+      "cuisine": "",
+      "avg_cost_per_person": 20
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 3,
+      "time": "3:30 PM",
+      "location": "La Ronde Amusement Park",
+      "activity": "Afternoon Fun",
+      "activity_desc": "Spend the afternoon at La Ronde Amusement Park, enjoying rides and attractions by the waterfront.",
+      "cuisine": "",
+      "avg_cost_per_person": 50
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 3,
+      "time": "7:00 PM",
+      "location": "Le Bremner",
+      "activity": "Dinner",
+      "activity_desc": "Dinner at Le Bremner, a seafood restaurant located in the heart of Old Montreal.",
+      "cuisine": "",
+      "avg_cost_per_person": 55
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 4,
+      "time": "10:00 AM",
+      "location": "Biodome de Montreal",
+      "activity": "Ecosystem Exploration",
+      "activity_desc": "Explore the Montreal Biodome and experience five different ecosystems in one place.",
+      "cuisine": "",
+      "avg_cost_per_person": 23
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 4,
+      "time": "1:00 PM",
+      "location": "L'Express",
+      "activity": "Lunch",
+      "activity_desc": "Lunch at L'Express, a popular French bistro in Montreal offering classic French cuisine at mid-range prices.",
+      "cuisine": "",
+      "avg_cost_per_person": 30
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 4,
+      "time": "4:00 PM",
+      "location": "Old Port of Montreal",
+      "activity": "Evening Walk",
+      "activity_desc": "Take a relaxing walk along the Old Port, and visit some boutiques, or enjoy a river cruise if interested.",
+      "cuisine": "",
+      "avg_cost_per_person": 20
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 4,
+      "time": "7:30 PM",
+      "location": "Bouillon Bilk",
+      "activity": "Dinner",
+      "activity_desc": "Finish the day with dinner at Bouillon Bilk, a chic modern eatery with innovative dishes.",
+      "cuisine": "",
+      "avg_cost_per_person": 50
+    },
+    {
+      "itinerary_name": "Montreal_5D4N_signature",
+      "day": 5,
+      "time": "9:00 AM",
+      "location": "Hotel Bonaventure Montreal",
+      "activity": "Check-out",
+      "activity_desc": "Check out of Hotel Bonaventure Montreal and prepare for departure.",
+      "cuisine": "",
+      "avg_cost_per_person": 0
+    }
+  ]
+  
