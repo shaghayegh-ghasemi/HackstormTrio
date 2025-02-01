@@ -11,6 +11,9 @@ langchainhub = "*"
 gdown = "*"
 openai-whisper = "*"
 moviepy = "*"
+langchain-ollama = "*"
+flask = "*"
+streamlit = "*"
 
 [dev-packages]
 
