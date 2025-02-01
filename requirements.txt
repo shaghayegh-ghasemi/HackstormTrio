@@ -1,3 +1,10 @@
 flask
-flask-cors
-openai
+streamlit
+requests
+gdown
+whisper
+moviepy
+langchain
+langchain_ollama
+langchain-core
+python-dotenv
