@@ -20,7 +20,7 @@ Welcome to **Hackstorm Trio**, a project developed during ConUHacks IX by our dy
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/Hackstorm-Trio.git
+   git clone https://github.com/shaghayegh-ghasemi/HackstormTrio.git
    ```
 2. Navigate to the project directory:
    ```sh
