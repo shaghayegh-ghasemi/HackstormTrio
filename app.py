@@ -122,12 +122,12 @@ with content:  # Content will take 3/5 of the page width
         },
         {
             "name": "Milad Khanchi",
-            "image": "https://raw.githubusercontent.com/shaghayegh-ghasemi/HackstormTrio/refs/heads/shaghayegh/assets/contributors/milad.JPG?token=GHSAT0AAAAAAC5C7XVI37ZWU7EIRPSZB2WSZ46RTIQ",
+            "image": "https://raw.githubusercontent.com/shaghayegh-ghasemi/HackstormTrio/refs/heads/shaghayegh/assets/contributors/milad.JPG?token=GHSAT0AAAAAAC5C7XVI53JRDNK67QKKAI3GZ46RYYA",
             "github": "https://github.com/Milad-Khanchi"
         },
         {
             "name": "Qian Sun",
-            "image": "https://raw.githubusercontent.com/shaghayegh-ghasemi/HackstormTrio/refs/heads/shaghayegh/assets/contributors/qian.jpg?token=GHSAT0AAAAAAC5C7XVJ4OKFC7WASPZFOESIZ46RWKQ",
+            "image": "https://raw.githubusercontent.com/shaghayegh-ghasemi/HackstormTrio/refs/heads/shaghayegh/assets/contributors/qian.jpg?token=GHSAT0AAAAAAC5C7XVJMBCS6DAI3RAJW43AZ46RX2Q",
             "github": "https://github.com/chin-sun"
         }
     ]
