@@ -19,6 +19,11 @@ Transcribe, Summarize & Translate​
 ## 📽️ Demo
 🔗 [Live Demo](https://your-demo-url.com) <!-- Replace with your deployed link or demo video -->
 
+## 📽️ Subtitle Generation Example
+🔗 [Input video](https://drive.google.com/file/d/1pWOT7er5Ok6CoZGGp8Q6PycZbr2aityd/view) <!-- Replace with your deployed link or demo video -->
+🔗 [Output video](https://drive.google.com/file/d/1KZcbv3ilAZyG3vM2Q9QxBA-EalwO3Ls0/view?usp=sharing) <!-- Replace with your deployed link or demo video -->
+
+
 ## 🏃‍♂️ How to Run
 ### **1. Clone the Repository**
 ```bash
