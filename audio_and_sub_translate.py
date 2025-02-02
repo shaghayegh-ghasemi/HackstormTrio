@@ -7,6 +7,8 @@ import pysrt
 import cv2
 import numpy as np
 from deep_translator import GoogleTranslator
+import pyttsx3
+from pydub import AudioSegment
 from PIL import Image, ImageDraw, ImageFont
 # Ensure the 'results' folder exists
 os.makedirs('./results', exist_ok=True)
@@ -29,6 +31,18 @@ def translate_transcription(transcription, target_language='fr'):
     for segment in transcription['segments']:
         segment['text'] = translate_text(segment['text'], target_language)
     return transcription
+def generate_translated_audio(transcription, output_audio_path='./results/translated_audio.mp3', language='fr'):
+    engine = pyttsx3.init()
+    engine.setProperty('rate', 150)
+    translated_text = " ".join([seg['text'] for seg in transcription['segments']])
+    translated_text = translated_text.encode('utf-8').decode('utf-8')
+    engine.save_to_file(translated_text, output_audio_path)
+    engine.runAndWait()
+    # Convert to 44.1 kHz for better quality
+    audio = AudioSegment.from_file(output_audio_path, format="mp3")
+    audio = audio.set_frame_rate(44100)
+    audio.export(output_audio_path, format="mp3")
+    return output_audio_path
 def generate_srt(transcription, srt_path='./results/subtitles.srt'):
     def format_timestamp(seconds):
         td = timedelta(seconds=seconds)
@@ -53,7 +67,7 @@ def overlay_subtitles(video_path, srt_path, output_path='./results/output_video.
     subs = pysrt.open(srt_path)
     font_path = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
     font = ImageFont.truetype(font_path, 40)
-    max_width = frame_width - 100
+    max_width = frame_width - 100  # Ensure text fits within frame width
     while video.isOpened():
         ret, frame = video.read()
         if not ret:
@@ -89,10 +103,10 @@ def overlay_subtitles(video_path, srt_path, output_path='./results/output_video.
         out.write(frame)
     video.release()
     out.release()
-    final_output = './results/final_video_with_subtitles.mp4'
+    final_output = './results/final_video_with_audio.mp4'
     video_clip = VideoFileClip(output_path)
-    original_audio = VideoFileClip(video_path).audio
-    final_video = video_clip.with_audio(original_audio)
+    translated_audio = AudioFileClip('./results/translated_audio.mp3')
+    final_video = video_clip.with_audio(translated_audio)
     final_video.write_videofile(final_output, codec='libx264', audio_codec='aac')
     return final_output
 def main(gdrive_url):
@@ -100,9 +114,10 @@ def main(gdrive_url):
     audio_path = extract_audio(video_path)
     transcription = transcribe_audio(audio_path)
     translated_transcription = translate_transcription(transcription, 'fr')
+    translated_audio_path = generate_translated_audio(translated_transcription)
     srt_path = generate_srt(translated_transcription)
     final_video = overlay_subtitles(video_path, srt_path)
-    print(f"Final translated video with subtitles saved as: {final_video}")
+    print(f"Final translated video with audio saved as: {final_video}")
 if __name__ == "__main__":
     gdrive_url = "https://drive.google.com/file/d/1x2HlTWOH2_rJJWeEU7xl5na-mtfCqKV2/view?usp=drive_link"
     main(gdrive_url)
