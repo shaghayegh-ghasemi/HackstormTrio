@@ -1,9 +1,10 @@
+# Hackstorm Trio 🚀
+
+Welcome to **Hackstorm Trio**, a project developed during ConUHacks IX by our dynamic team.
+
 # ClipGenius
 
 Transcribe, Summarize & Translate​
-
-## 📌 Hackstorm Trio's
-Members: Shaghayegh, Milad, Qian
 
 ## 🚀 Features
 - ✅ Transcribe
@@ -39,7 +40,7 @@ cd utils
 python backend_app.py 
 ```
 
-## 🧑‍💻 Contributors
+## 👥 Team Members
 👤 [Shaghayegh Ghasemi](https://github.com/shaghayegh-ghasemi)  
 👤 [Milad Khanchi](https://github.com/Milad-Khanchi)  
 👤 [Qian Sun](https://github.com/Chin-Sun)  
