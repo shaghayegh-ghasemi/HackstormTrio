@@ -40,9 +40,9 @@ python backend_app.py
 ```
 
 ## 🧑‍💻 Contributors
-👤 [Shaghayegh Ghasemi](https://github.com/your-username)  
-👤 [Milad Khanchi](https://github.com/contributor-username)  
-👤 [Qian Sun](https://github.com/contributor-username)  
+👤 [Shaghayegh Ghasemi](https://github.com/shaghayegh-ghasemi)  
+👤 [Milad Khanchi](https://github.com/Milad-Khanchi)  
+👤 [Qian Sun](https://github.com/Chin-Sun)  
 
 ## ⭐ Support & Contribution
 - If you like this project, please give it a ⭐ on GitHub!
