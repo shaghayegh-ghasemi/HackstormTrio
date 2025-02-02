@@ -18,6 +18,8 @@ flask-cors = "*"
 waitress = "*"
 pysrt = "*"
 deep-translator = "*"
+transformers = "*"
+sentencepiece = "*"
 
 [dev-packages]
 

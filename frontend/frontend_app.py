@@ -16,7 +16,7 @@ st.set_page_config(
 left_space, content, right_space = st.columns([1, 3, 1])  # Adjusted to make content wider
 
 with content:  # Content will take 3/5 of the page width
-    st.markdown("<h2 style='text-align: center;'>⚡ Welcome to Hackstorm Trio's AI-powered Video Processing Tool! ⚡</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center;'>⚡ Welcome to Hackstorm Trio's AI-powered Video Processing Tool!</h2>", unsafe_allow_html=True)
 
     # 🔹 Input Field Styling 🔹
     st.markdown(
