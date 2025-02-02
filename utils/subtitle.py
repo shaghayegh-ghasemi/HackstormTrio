@@ -3,7 +3,7 @@ import sys
 import cv2
 import numpy as np
 import pysrt
-from moviepy.video.io.VideoFileClip import VideoFileClip
+from moviepy import *
 from datetime import timedelta
 from deep_translator import GoogleTranslator
 from PIL import Image, ImageDraw, ImageFont

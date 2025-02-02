@@ -1,7 +1,7 @@
 import os
 import gdown
 import whisper
-from moviepy.video.io.VideoFileClip import VideoFileClip
+from moviepy import *
 
 import sys
 import os
