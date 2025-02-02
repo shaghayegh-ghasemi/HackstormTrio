@@ -20,7 +20,7 @@ Transcribe, Summarize & Translate​
 🔗 [Live Demo](https://your-demo-url.com) <!-- Replace with your deployed link or demo video -->
 
 ## 📽️ Subtitle Generation Example
-🔗 [Input video](https://drive.google.com/file/d/1pWOT7er5Ok6CoZGGp8Q6PycZbr2aityd/view) <!-- Replace with your deployed link or demo video -->
+🔗 [Input video](https://drive.google.com/file/d/1x2HlTWOH2_rJJWeEU7xl5na-mtfCqKV2/view?usp=drive_link) <!-- Replace with your deployed link or demo video -->
 🔗 [Output video](https://drive.google.com/file/d/1KZcbv3ilAZyG3vM2Q9QxBA-EalwO3Ls0/view?usp=sharing) <!-- Replace with your deployed link or demo video -->
 
 
