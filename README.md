@@ -1,9 +1,8 @@
-# Project Name
+# ClipGenius
 
-ClipGenius: Transcribe, Summarize & Translate​
+Transcribe, Summarize & Translate​
 
-## 📌 Description
-Group name: Hackstorm Trio's. 
+## 📌 Hackstorm Trio's
 Members: Shaghayegh, Milad, Qian
 
 ## 🚀 Features
