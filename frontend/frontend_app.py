@@ -16,7 +16,7 @@ st.set_page_config(
 left_space, content, right_space = st.columns([1, 3, 1])  # Adjusted to make content wider
 
 with content:  # Content will take 3/5 of the page width
-    st.markdown("<h2 style='text-align: center;'>⚡ Welcome to Hackstorm Trio's AI-powered Video Processing Tool!</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center;'> Welcome to Hackstorm Trio's AI-powered Video Processing Tool!</h2>", unsafe_allow_html=True)
 
     # 🔹 Input Field Styling 🔹
     st.markdown(
@@ -59,17 +59,17 @@ with content:  # Content will take 3/5 of the page width
     contributors = [
         {
             "name": "Shaghayegh Ghasemi",
-            "image": "https://raw.githubusercontent.com/shaghayegh-ghasemi/HackstormTrio/refs/heads/shaghayegh/assets/contributors/shaghayegh.JPG?token=GHSAT0AAAAAAC5C7XVIIMAY526TLFTMDEZSZ46RUGA",
+            "image": "https://i.imgur.com/3OfYuGo.jpeg",
             "github": "https://github.com/shaghayegh-ghasemi"
         },
         {
             "name": "Milad Khanchi",
-            "image": "https://raw.githubusercontent.com/shaghayegh-ghasemi/HackstormTrio/refs/heads/shaghayegh/assets/contributors/milad.JPG?token=GHSAT0AAAAAAC5C7XVIBHVWYTAGEHV52UZIZ46TTIQ",
+            "image": "https://i.imgur.com/OnJeHZS.jpeg",
             "github": "https://github.com/Milad-Khanchi"
         },
         {
             "name": "Qian Sun",
-            "image": "https://raw.githubusercontent.com/shaghayegh-ghasemi/HackstormTrio/refs/heads/shaghayegh/assets/contributors/qian.jpg?token=GHSAT0AAAAAAC5C7XVJMBCS6DAI3RAJW43AZ46RX2Q",
+            "image": "https://i.imgur.com/wac0u2c.jpeg",
             "github": "https://github.com/chin-sun"
         }
     ]
