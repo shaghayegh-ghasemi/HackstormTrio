@@ -17,10 +17,14 @@ Transcribe, Summarize & Translate​
 - **Other:** OpenCV / Pytorch / FFmpeg / ...
 
 ## 📽️ Demo
-🔗 [Live Demo](https://your-demo-url.com) <!-- Replace with your deployed link or demo video -->
+🔗 [Live Demo](https://www.youtube.com/watch?v=6eV-pa0vTJ0) <!-- Replace with your deployed link or demo video -->
+
+## 🖼️ Slides
+🔗 [Link](https://docs.google.com/presentation/d/1qJCVv_6w7r9BogDKMFAWBl-uOdJzI8CR/edit?usp=sharing&ouid=114519568541965646466&rtpof=true&sd=true) <!-- Replace with your deployed link or demo video -->
 
 ## 📽️ Subtitle Generation Example
 🔗 [Input video](https://drive.google.com/file/d/1x2HlTWOH2_rJJWeEU7xl5na-mtfCqKV2/view?usp=drive_link) <!-- Replace with your deployed link or demo video -->
+
 🔗 [Output video](https://drive.google.com/file/d/1KZcbv3ilAZyG3vM2Q9QxBA-EalwO3Ls0/view?usp=sharing) <!-- Replace with your deployed link or demo video -->
 
 
