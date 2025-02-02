@@ -1,3 +1,0 @@
-Here is a short summary:
-
-Meet Midot, a Master of Sciences student at Concordia University, specializing in computer vision with a focus on multi-object tracking. With extensive experience in AI research and projects, including fine-tuning language models, predicting birth outcomes, using deep Q-learning for lunar landing, and even playing Pac-Man with convolutional Q-learning to achieve high scores. Midot is passionate about solving real-world problems with AI techniques and has submitted a paper to CVPR 2025.

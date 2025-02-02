@@ -6,7 +6,9 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from utils.transcript import transcript_with_timeline, transcript
 from utils.summarization import summarize_text
-from utils.config import RESULTS_DIR
+from utils.translate import extract_and_translate_transcript
+from utils.subtitle import generate_subtitles
+from utils.config import RESULTS_DIR, LANGUAGE_CODES
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from waitress import serve
@@ -60,36 +62,73 @@ def get_summary():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     
-# --- API 4: Translate Summary ---
-# @app.route('/translate', methods=['POST'])
-# def translate_summary():
-#     """Translate summary into different languages"""
-#     data = request.json
-#     summary_text = data.get("summary")
-#     language = data.get("language")
+# --- API 3: Translate Summary ---
+@app.route('/translate', methods=['POST'])
+def translate_text_api():
+    """
+    API endpoint to extract the transcript and translate it.
+    """
+    try:
+        data = request.json
+        video_url = data.get("video_url")
+        target_language = data.get("target_language", "fr")  # Default to French
 
-#     if not summary_text or not language:
-#         return jsonify({"error": "Missing summary or target language"}), 400
+        if not video_url:
+            return jsonify({"error": "No video URL provided"}), 400
 
-#     translated_text = translate_text(summary_text, language)
-#     return jsonify({"translated_summary": translated_text})
+        if target_language not in LANGUAGE_CODES.values():
+            return jsonify({"error": "Unsupported language"}), 400
 
+        # Extract transcript first
+        transcript_paths = extract_and_translate_transcript(video_url, target_language)
 
-# --- API 5: Generate Subtitles ---
-# @app.route('/subtitles', methods=['POST'])
-# def generate_video_subtitles():
-#     """Generate subtitles for a video"""
-#     data = request.json
-#     video_url = data.get("video_url")
+        if "error" in transcript_paths:
+            return jsonify({"error": transcript_paths["error"]}), 500
 
-#     if not video_url:
-#         return jsonify({"error": "No video URL provided"}), 400
+        # ✅ Ensure both original and translated transcript paths are returned
+        return jsonify({
+            "message": "Translation completed successfully",
+            "original_transcript": transcript_paths["original_transcript"],
+            "translated_transcript": transcript_paths["translated_transcript"]
+        }), 200
 
-#     subtitle_file = generate_subtitles(video_url)
-#     return jsonify({"subtitles": subtitle_file})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
+# --- API 4: Generate Subtitles ---
+@app.route('/generate_subtitles', methods=['POST'])
+def generate_subtitles_api():
+    """API endpoint to generate subtitles for a given video."""
+    try:
+        data = request.json
+        video_url = data.get("video_url")
+        target_language = data.get("target_language")
 
-# 
+        # 🔹 Validate inputs
+        if not video_url:
+            return jsonify({"error": "No video URL provided"}), 400
+        if target_language not in LANGUAGE_CODES.values():
+            return jsonify({"error": "Unsupported language. Supported languages: " + ", ".join(LANGUAGE_CODES.keys())}), 400
 
+        # 🔹 Call the subtitle generation function
+        final_video_path = generate_subtitles(video_url, target_language)
+        
+        # 🔹 Define subtitle file path (assuming the function saves subtitles as `subtitles.srt`)
+        subtitle_file_path = os.path.join(os.path.dirname(final_video_path), "subtitles.srt")
+
+        if not os.path.exists(final_video_path) or not os.path.exists(subtitle_file_path):
+            return jsonify({"error": "Subtitle generation failed."}), 500
+
+        # 🔹 Return subtitle file and processed video file path
+        response_data = {
+            "final_video": final_video_path,
+            "subtitle_file": subtitle_file_path
+        }
+
+        return jsonify(response_data), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    
 if __name__ == '__main__':
     serve(app, host="0.0.0.0", port=5000, threads=4)

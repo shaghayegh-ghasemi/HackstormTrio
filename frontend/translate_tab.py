@@ -10,14 +10,18 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from utils.config import RESULTS_DIR, LANGUAGE_CODES
 from utils.validators import is_valid_google_drive_link
 
+
 def translate_tab():
     """🌍 Video Translation Tab"""
-    st.subheader("🌍 Translate Transcript & Subtitles")
+    st.subheader("🌍 Translate Transcript")
 
     # 🔹 Input: Video URL
-    drive_link = st.text_input("🔗 **Google Drive Video Link**", key="translate_drive_link",
-                               placeholder="Paste your video link here...",
-                               help="Make sure your link is from Google Drive and shared publicly.")
+    drive_link = st.text_input(
+        "🔗 **Google Drive Video Link**",
+        key="translate_drive_link",
+        placeholder="Paste your video link here...",
+        help="Make sure your link is from Google Drive and shared publicly."
+    )
 
     # 🔹 Select Target Language
     languages = list(LANGUAGE_CODES.keys())
@@ -31,8 +35,18 @@ def translate_tab():
             st.error("❌ Invalid Google Drive link. Please enter a correct Google Drive video link.")
         else:
             with st.status("⏳ Translating...", expanded=True) as status:
-                st.write("📥 Extracting transcript with timestamps...")
-                st.write(f"🌍 Translating to {target_language}...")
+                steps = [
+                    "📥 Extracting transcript with timestamps...",
+                    f"🌍 Translating transcript to {target_language}...",
+                    "📜 Generating translated transcript...",
+                ]
+
+                progress_bar = st.progress(0)
+
+                for i, step in enumerate(steps):
+                    st.write(step)
+                    progress_bar.progress((i + 1) / len(steps))
+                    time.sleep(2)  # Simulating processing time
 
                 # 🔹 Send request to backend
                 response = requests.post(
@@ -42,15 +56,17 @@ def translate_tab():
 
                 if response.status_code == 200:
                     translation_data = response.json()
-                    transcript_file = translation_data.get("translated_transcript", "")
-                    download_url = translation_data.get("download_url", "")
+                    translated_text = translation_data.get("translated_text", "")
+                    translated_file = translation_data.get("translated_file_path", "")
 
+                    # ✅ Display Translated Text
                     status.update(label="✅ Translation Completed!", state="complete")
-                    st.text_area("📜 Translated Transcript", open(transcript_file, "r").read(), height=200)
+                    st.subheader("📜 Translated Transcript:")
+                    st.text_area("📜 Translated Transcript", translated_text, height=300)
 
                     # 🔹 Provide a download button
-                    if transcript_file and os.path.exists(transcript_file):
-                        with open(transcript_file, "r") as file:
+                    if translated_file and os.path.exists(translated_file):
+                        with open(translated_file, "r", encoding="utf-8") as file:
                             file_contents = file.read()
                         st.download_button(
                             label="📥 Download Translated Transcript",
@@ -60,10 +76,6 @@ def translate_tab():
                         )
                     else:
                         st.error("❌ Translated transcript file not found!")
-
-                    # # 🔹 Display backend download link (Optional)
-                    # if download_url:
-                    #     st.markdown(f"[📥 Download from Backend]({download_url})", unsafe_allow_html=True)
 
                 else:
                     status.update(label="❌ Translation Failed!", state="error")

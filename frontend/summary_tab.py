@@ -8,10 +8,11 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from utils.transcript import transcript
+from utils.validators import is_valid_google_drive_link  # ✅ Import validation function
 from utils.config import RESULTS_DIR
 
 def summary_tab():
-    """Video Summarization Tab"""
+    """📜 Video Summarization Tab"""
     st.subheader("📜 Video Summary")
 
     drive_link = st.text_input("🔗 **Google Drive Video Link**", key="summary_drive_link",
@@ -19,7 +20,11 @@ def summary_tab():
                                help="Make sure your link is from Google Drive and shared publicly.")
 
     if st.button("🚀 Generate Summary"):
-        if drive_link:
+        if not drive_link:
+            st.warning("⚠️ Please enter a valid video link.")
+        elif not is_valid_google_drive_link(drive_link):
+            st.error("❌ Invalid Google Drive link. Please enter a correct Google Drive video link.")
+        else:
             with st.status("⏳ Processing your video...", expanded=True) as status:
                 steps = [
                     "📥 Downloading video...",
@@ -27,12 +32,13 @@ def summary_tab():
                     "📝 Transcribing...",
                     "🤖 Generating summary...",
                 ]
+
                 progress_bar = st.progress(0)
 
                 for i, step in enumerate(steps):
                     st.write(step)
                     progress_bar.progress((i + 1) / len(steps))
-                    time.sleep(2)
+                    time.sleep(2)  # Simulating processing time
 
                 # 🔹 Extract transcript before calling summarization API
                 st.write("⏳ Extracting transcript from video...")
@@ -74,5 +80,3 @@ def summary_tab():
                 else:
                     status.update(label="❌ Error!", state="error")
                     st.error("Error: " + response.json().get("error", "Unknown error."))
-        else:
-            st.warning("⚠️ Please enter a valid video link.")

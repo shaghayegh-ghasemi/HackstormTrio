@@ -4,21 +4,26 @@ import time
 import os
 import sys
 
-# 🔹 Manually add the root directory to Python's module search path
+# 🔹 Ensure the root directory is in the Python module search path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from utils.config import RESULTS_DIR
+from utils.validators import is_valid_google_drive_link  # ✅ Import validation function
 
 def timeline_tab():
-    """Timeline-Based Transcript Tab"""
+    """⏳ Transcript with Timeline Tab"""
     st.subheader("⏳ Transcript with Timeline")
 
     drive_link = st.text_input("🔗 **Google Drive Video Link**", key="transcript_drive_link",
                             placeholder="Paste your video link here...",
                             help="Make sure your link is from Google Drive and shared publicly.")
-    
+
     if st.button("🚀 Generate Transcript"):
-        if drive_link:
+        if not drive_link:
+            st.warning("⚠️ Please enter a valid video link.")
+        elif not is_valid_google_drive_link(drive_link):
+            st.error("❌ Invalid Google Drive link. Please enter a correct Google Drive video link.")
+        else:
             with st.status("⏳ Processing your video...", expanded=True) as status:
                 steps = [
                     "📥 Downloading video...",
@@ -63,5 +68,3 @@ def timeline_tab():
                 else:
                     status.update(label="❌ Error!", state="error")
                     st.error("Error: " + response.json().get("error", "Unknown error."))
-        else:
-            st.warning("⚠️ Please enter a valid video link.")

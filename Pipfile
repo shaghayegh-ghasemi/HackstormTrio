@@ -16,6 +16,8 @@ flask = "*"
 streamlit = "*"
 flask-cors = "*"
 waitress = "*"
+pysrt = "*"
+deep-translator = "*"
 
 [dev-packages]
 

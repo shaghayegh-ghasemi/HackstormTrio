@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9d8e7a889dd55cb774bef2e38e058dc84549e62a583a86d6fe5b58cba781de18"
+            "sha256": "ea05a7c4bd4911275e7f7340b41ecb762d9c10509c135961527237c23ac17446"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -186,6 +186,14 @@
             "markers": "python_version >= '3.6'",
             "version": "==2025.1.31"
         },
+        "chardet": {
+            "hashes": [
+                "sha256:1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7",
+                "sha256:e1cf59446890a00105fe7b7912492ea04b6e6f06d4b742b2c788469e34c82970"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==5.2.0"
+        },
         "charset-normalizer": {
             "hashes": [
                 "sha256:0167ddc8ab6508fe81860a57dd472b2ef4060e8d378f0cc555707126830f2537",
@@ -315,6 +323,15 @@
             ],
             "markers": "python_version >= '3.5'",
             "version": "==5.1.1"
+        },
+        "deep-translator": {
+            "hashes": [
+                "sha256:801260c69231138707ea88a0955e484db7d40e210c9e0ae0f77372ffda5f4bf5",
+                "sha256:d635df037e23fa35d12fd42dab72a0b55c9dd19e6292009ee7207e3f30b9e60a"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.7' and python_version < '4.0'",
+            "version": "==1.11.4"
         },
         "distro": {
             "hashes": [
@@ -457,11 +474,11 @@
         },
         "fsspec": {
             "hashes": [
-                "sha256:670700c977ed2fb51e0d9f9253177ed20cbde4a3e5c0283cc5385b5870c8533f",
-                "sha256:b520aed47ad9804237ff878b504267a3b0b441e97508bd6d2d8774e3db85cee2"
+                "sha256:1c24b16eaa0a1798afa0337aa0db9b256718ab2a89c425371f5628d22c3b6afd",
+                "sha256:9de2ad9ce1f85e1931858535bc882543171d197001a0a5eb2ddc04f1781ab95b"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==2024.12.0"
+            "version": "==2025.2.0"
         },
         "gdown": {
             "hashes": [
@@ -1716,6 +1733,13 @@
             ],
             "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==1.7.1"
+        },
+        "pysrt": {
+            "hashes": [
+                "sha256:b4f844ba33e4e7743e9db746492f3a193dc0bc112b153914698e7c1cdeb9b0b9"
+            ],
+            "index": "pypi",
+            "version": "==1.1.2"
         },
         "python-dateutil": {
             "hashes": [
