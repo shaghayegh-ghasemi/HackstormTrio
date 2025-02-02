@@ -79,21 +79,39 @@ def translate_text_api():
         if target_language not in LANGUAGE_CODES.values():
             return jsonify({"error": "Unsupported language"}), 400
 
-        # Extract transcript first
-        transcript_paths = extract_and_translate_transcript(video_url, target_language)
+        transcript_data = extract_and_translate_transcript(video_url, target_language)
 
-        if "error" in transcript_paths:
-            return jsonify({"error": transcript_paths["error"]}), 500
+        if "error" in transcript_data:
+            return jsonify({"error": transcript_data["error"]}), 500
 
-        # ✅ Ensure both original and translated transcript paths are returned
+        original_transcript_path = transcript_data.get("original_transcript")
+        translated_transcript_path = transcript_data.get("translated_transcript")
+
+        # Ensure original transcript is read correctly
+        if original_transcript_path and os.path.exists(original_transcript_path):
+            with open(original_transcript_path, "r", encoding="utf-8") as file:
+                original_transcript = file.read()
+        else:
+            return jsonify({"error": "Failed to retrieve original transcript"}), 500
+
+        # Ensure translated transcript is read correctly
+        if translated_transcript_path and os.path.exists(translated_transcript_path):
+            with open(translated_transcript_path, "r", encoding="utf-8") as file:
+                translated_transcript = file.read()
+        else:
+            return jsonify({"error": "Failed to retrieve translated transcript"}), 500
+
         return jsonify({
             "message": "Translation completed successfully",
-            "original_transcript": transcript_paths["original_transcript"],
-            "translated_transcript": transcript_paths["translated_transcript"]
+            "original_transcript": original_transcript,
+            "original_transcript_path": original_transcript_path,
+            "translated_transcript": translated_transcript,
+            "translated_transcript_path": translated_transcript_path
         }), 200
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 # --- API 4: Generate Subtitles ---
 @app.route('/generate_subtitles', methods=['POST'])
