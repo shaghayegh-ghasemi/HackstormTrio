@@ -12,9 +12,9 @@ Transcribe, Summarize & Translate​
 - ✅ Translate
 
 ## 🛠️ Technologies Used
-- **Frontend:** Streamlit / React 
-- **Backend:** Flask / FastAPI
-- **Other:** OpenCV / Pytorch / FFmpeg / ...
+- **Frontend:** Streamlit
+- **Backend:** Flask
+- **Other:** OpenCV / Whisper / DeepTranslator / Transformers ...
 
 ## 📽️ Demo
 🔗 [Live Demo](https://www.youtube.com/watch?v=6eV-pa0vTJ0) <!-- Replace with your deployed link or demo video -->
